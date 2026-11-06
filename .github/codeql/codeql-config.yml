@@ -1,9 +1,12 @@
 name: "InstallBlock CodeQL Configuration"
 
-# Exclude false-positive or non-applicable queries for this Android architecture:
+# Exclude false-positive, compiler-generated, or non-applicable queries for this Android architecture:
 # 1. java/android/insecure-local-authentication: Device admin / UI warning gates are used as friction barriers, not a cryptographic vault.
 # 2. java/deprecated-call: Platform compatibility branches call SDK-specific APIs conditionally.
 # 3. java/android/missing-certificate-pinning: Dynamic blocklist and icon endpoints rotate certificates; hardcoded pinning breaks remote list fetch.
+# 4. java/potentially-weak-cryptographic-algorithm: Dalvik Executable (DEX) file format specification requires a 20-byte SHA-1 signature in header bytes 12-31; Android ART verifier enforces this exact algorithm.
+# 5. java/field-masks-super-field: Jetpack Compose compiler generates synthetic static `$stable` fields on Composable classes and subclasses for recomposition tracking.
+# 6. java/local-variable-is-never-read: Kotlin compiler generates synthetic unread `tmp0_other_with_cast` local variables in `data object` equals() bytecode.
 query-filters:
   - exclude:
       id: java/android/insecure-local-authentication
@@ -11,3 +14,10 @@ query-filters:
       id: java/deprecated-call
   - exclude:
       id: java/android/missing-certificate-pinning
+  - exclude:
+      id: java/potentially-weak-cryptographic-algorithm
+  - exclude:
+      id: java/field-masks-super-field
+  - exclude:
+      id: java/local-variable-is-never-read
+

@@ -323,7 +323,8 @@ class PlaceholderBuilder {
         buf.putInt(1)               // size = 1 map list
         buf.putInt(112)             // offset = 112
 
-        // SHA-1 over bytes[32..139]
+        // Android DEX header specification (offset 12..31) requires exactly a 20-byte SHA-1 signature
+        // of bytes 32..EOF. Android ART verifier validates this exact checksum and rejects the DEX if modified.
         val sha1 = java.security.MessageDigest.getInstance("SHA-1").digest(dex.copyOfRange(32, 140))
         System.arraycopy(sha1, 0, dex, 12, 20)   // bytes 12-31
 
