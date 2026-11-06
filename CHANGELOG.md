@@ -1,7 +1,3 @@
-# Changelog
-
-All notable changes to InstallBlock are documented here.
-
 ## InstallBlock 1.0.0
 
 ### Initial Release
