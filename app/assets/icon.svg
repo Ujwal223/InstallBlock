@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Multi-stage ambient shadow for squircle -->
+    <filter id="squircle-shadow" x="-20%" y="-15%" width="140%" height="145%">
+      <!-- Deep ambient shadow -->
+      <feGaussianBlur in="SourceAlpha" stdDeviation="20"/>
+      <feOffset dx="0" dy="20" result="deepBlur"/>
+      <feComponentTransfer in="deepBlur" result="deepShadow">
+        <feFuncA type="linear" slope="0.30"/>
+      </feComponentTransfer>
+
+      <!-- Crisp contact shadow -->
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="7" result="contactBlur"/>
+      <feComponentTransfer in="contactBlur" result="contactShadow">
+        <feFuncA type="linear" slope="0.22"/>
+      </feComponentTransfer>
+
+      <feMerge>
+        <feMergeNode in="deepShadow"/>
+        <feMergeNode in="contactShadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Cross drop shadow -->
+    <filter id="cross-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="7" result="blur"/>
+      <feComponentTransfer in="blur" result="shadow">
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Rich Blue Gradient (#1F6FEB with depth) -->
+    <linearGradient id="body-grad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#3A8CFE"/>
+      <stop offset="25%" stop-color="#2472F2"/>
+      <stop offset="65%" stop-color="#1B63DB"/>
+      <stop offset="100%" stop-color="#0E48A8"/>
+    </linearGradient>
+
+    <!-- Top-down specular dome light -->
+    <radialGradient id="top-glow" cx="50%" cy="10%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0"/>
+    </radialGradient>
+
+    <!-- Edge vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="65%">
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.0"/>
+      <stop offset="100%" stop-color="#03163d" stop-opacity="0.28"/>
+    </radialGradient>
+
+    <!-- Rim highlight / chamfer -->
+    <linearGradient id="rim-highlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <!-- Cross vertical sheen -->
+    <linearGradient id="cross-grad" x1="0%" y1="88" x2="0%" y2="424" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EEF3F8"/>
+    </linearGradient>
+
+    <clipPath id="squircle-clip">
+      <!-- OneUI style smooth squircle (420x420) centered at (256, 256) -> rect from (46, 46) -->
+      <rect x="46" y="46" width="420" height="420" rx="105" ry="105"/>
+    </clipPath>
+  </defs>
+
+  <!-- 1. Squircle with ambient drop shadow -->
+  <g filter="url(#squircle-shadow)">
+    <rect x="46" y="46" width="420" height="420" rx="105" ry="105" fill="url(#body-grad)"/>
+  </g>
+
+  <!-- 2. Inside-squircle surface lighting -->
+  <g clip-path="url(#squircle-clip)">
+    <rect x="46" y="46" width="420" height="420" fill="url(#vignette)"/>
+    <rect x="46" y="46" width="420" height="420" fill="url(#top-glow)"/>
+  </g>
+
+  <!-- 3. Rim highlight -->
+  <rect x="47" y="47" width="418" height="418" rx="104" ry="104" fill="none" stroke="url(#rim-highlight)" stroke-width="2"/>
+
+  <!-- 4. Large bold cross matching device launcher proportions -->
+  <!-- Center: 256, 256. Span: 88 to 424 (336px total). Thickness: 48px (half: 24px). Radius: 24px. Inner fillet: 6px. -->
+  <!-- Vertical bar: X from 232 to 280, Y from 88 to 424 -->
+  <!-- Horizontal bar: X from 88 to 424, Y from 232 to 280 -->
+  <!-- Inner corners: (232, 232), (280, 232), (280, 280), (232, 280) -->
+  <g filter="url(#cross-shadow)">
+    <path d="
+      M 232, 112
+      A 24 24 0 0 1 280, 112
+      L 280, 226
+      A 6 6 0 0 0 286, 232
+      L 400, 232
+      A 24 24 0 0 1 400, 280
+      L 286, 280
+      A 6 6 0 0 0 280, 286
+      L 280, 400
+      A 24 24 0 0 1 232, 400
+      L 232, 286
+      A 6 6 0 0 0 226, 280
+      L 112, 280
+      A 24 24 0 0 1 112, 232
+      L 226, 232
+      A 6 6 0 0 0 232, 226
+      Z
+    " fill="url(#cross-grad)"/>
+  </g>
+
+</svg>

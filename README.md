@@ -27,6 +27,16 @@ Android phones often end up with apps you never asked for. Phone makers push new
 ### The Solution
 InstallBlock stops this directly at the Android system level. When you block an app, InstallBlock locks that package from being added again. Whether the install comes from an OEM system update, Google Play, a browser download, or a third party, the system rejects it immediately. The app stays off your phone until you choose to unblock it.
 
+<br/>
+
+| 1. Browse Catalog | 2. Block Package | 3. Active Blocklist |
+| :---: | :---: | :---: |
+| <a href="app/assets/Screenshot_20261106_170608_InstallBlock.jpg"><img src="app/assets/Screenshot_20261106_170608_InstallBlock.jpg" width="200" alt="Browse Catalog" /></a> | <a href="app/assets/Screenshot_20261106_170639_InstallBlock.jpg"><img src="app/assets/Screenshot_20261106_170639_InstallBlock.jpg" width="200" alt="Block Package" /></a> | <a href="app/assets/Screenshot_20261106_171125_InstallBlock.jpg"><img src="app/assets/Screenshot_20261106_171125_InstallBlock.jpg" width="200" alt="Active Blocklist" /></a> |
+| **4. Play Store Download** | **5. Installation Blocked** | **6. Settings & Modes** |
+| <a href="app/assets/Screenshot_20261106_171149_Google%20Play%20Store.jpg"><img src="app/assets/Screenshot_20261106_171149_Google%20Play%20Store.jpg" width="200" alt="Play Store Download" /></a> | <a href="app/assets/Screenshot_20261106_171204_Google%20Play%20Store.jpg"><img src="app/assets/Screenshot_20261106_171204_Google%20Play%20Store.jpg" width="200" alt="Installation Blocked" /></a> | <a href="app/assets/Screenshot_20261106_170649_InstallBlock.jpg"><img src="app/assets/Screenshot_20261106_170649_InstallBlock.jpg" width="200" alt="Settings & Modes" /></a> |
+
+<br/>
+
 ---
 
 ## Key Features
