@@ -1,0 +1,64 @@
+[versions]
+agp                  = "9.5.0"
+kotlin               = "2.4.10"
+compileSdk           = "37"
+targetSdk            = "36"
+minSdk               = "26"
+
+composeBom           = "2026.09.00"
+coroutines           = "1.11.0"
+serializationJson    = "1.12.0"
+
+activityCompose      = "1.10.1"
+lifecycleViewmodel   = "2.9.0"
+navigationCompose    = "2.9.0"
+datastorePreferences = "1.1.2"
+
+coil                 = "3.6.3"
+okhttpBom            = "5.5.1"
+haze                 = "2.0.1"
+shizuku              = "13.1.5"
+apksig               = "9.1.0"
+
+[libraries]
+# Compose (versions managed by BOM)
+compose-bom              = { group = "androidx.compose",          name = "compose-bom",            version.ref = "composeBom" }
+compose-ui               = { group = "androidx.compose.ui",       name = "ui" }
+compose-ui-tooling-prev  = { group = "androidx.compose.ui",       name = "ui-tooling-preview" }
+compose-material3        = { group = "androidx.compose.material3", name = "material3" }
+compose-material-icons   = { group = "androidx.compose.material",   name = "material-icons-extended" }
+compose-ui-tooling       = { group = "androidx.compose.ui",       name = "ui-tooling" }
+
+# AndroidX
+activity-compose         = { module = "androidx.activity:activity-compose",                   version.ref = "activityCompose" }
+lifecycle-viewmodel      = { module = "androidx.lifecycle:lifecycle-viewmodel-compose",        version.ref = "lifecycleViewmodel" }
+lifecycle-runtime        = { module = "androidx.lifecycle:lifecycle-runtime-compose",          version.ref = "lifecycleViewmodel" }
+navigation-compose       = { module = "androidx.navigation:navigation-compose",                version.ref = "navigationCompose" }
+datastore-preferences    = { module = "androidx.datastore:datastore-preferences",              version.ref = "datastorePreferences" }
+
+# Kotlin
+coroutines-android       = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android",     version.ref = "coroutines" }
+coroutines-test          = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test",       version.ref = "coroutines" }
+serialization-json       = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json",     version.ref = "serializationJson" }
+
+# Networking & images
+coil-compose             = { module = "io.coil-kt.coil3:coil-compose",                        version.ref = "coil" }
+coil-network-okhttp      = { module = "io.coil-kt.coil3:coil-network-okhttp",                 version.ref = "coil" }
+okhttp-bom               = { group  = "com.squareup.okhttp3",     name = "okhttp-bom",         version.ref = "okhttpBom" }
+okhttp-android           = { group  = "com.squareup.okhttp3",     name = "okhttp-android" }
+
+# Glass
+haze                     = { module = "dev.chrisbanes.haze:haze",                              version.ref = "haze" }
+haze-glass               = { module = "dev.chrisbanes.haze:haze-glass",                        version.ref = "haze" }
+
+# Shizuku
+shizuku-api              = { module = "dev.rikka.shizuku:api",                                 version.ref = "shizuku" }
+shizuku-provider         = { module = "dev.rikka.shizuku:provider",                            version.ref = "shizuku" }
+
+# APK signing (runtime: runs on-device via D8/ART; uses only standard JCE)
+apksig                   = { module = "com.android.tools.build:apksig",                        version.ref = "apksig" }
+
+[plugins]
+android-application  = { id = "com.android.application",                    version.ref = "agp" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization",   version.ref = "kotlin" }
+kotlin-compose       = { id = "org.jetbrains.kotlin.plugin.compose",         version.ref = "kotlin" }

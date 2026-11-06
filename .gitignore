@@ -1,0 +1,45 @@
+# Gradle
+.gradle/
+build/
+app/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android
+*.apk
+*.aar
+*.aab
+local.properties
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+.DS_Store?
+.kotlin/
+
+# Keys & Signing Secrets :  NEVER commit signing keys
+*.jks
+*.keystore
+*.p12
+*.key
+*keystore*.txt
+key.properties
+release.properties
+upload-keystore.jks
+release_notes.md
+
+# F-Droid listing metadata (draft recipe for fdroiddata)
+metadata/
+
+# Documentation, PRD & design assets
+inspo/
+docs/
+*PRD*
+*Feature spec*
+*.hprof
+*.colai
+
+# Fonts :  download separately; see README
+app/src/main/assets/fonts/*.ttf
+app/src/main/assets/fonts/*.otf

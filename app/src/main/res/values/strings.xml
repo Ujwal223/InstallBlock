@@ -1,0 +1,53 @@
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<resources>
+    <string name="app_name">InstallBlock</string>
+
+    <!-- Placeholder APK label: visible in system Settings for every blocked app. -->
+    <string name="placeholder_label">Blocked by InstallBlock</string>
+
+    <!-- Install modes -->
+    <string name="mode_auto">Auto</string>
+    <string name="mode_normal">Normal</string>
+    <string name="mode_shizuku">Shizuku</string>
+
+    <!-- App states -->
+    <string name="state_not_blocked">Not blocked</string>
+    <string name="state_installed">Installed</string>
+    <string name="state_blocking">Blocking…</string>
+    <string name="state_blocked">Blocked</string>
+    <string name="state_failed">Failed</string>
+
+    <!-- Data-loss confirmation: must name the app and be unambiguous. -->
+    <string name="confirm_uninstall_title">Uninstall %1$s?</string>
+    <string name="confirm_uninstall_body">InstallBlock will uninstall %1$s and delete its data, then install a placeholder named Blocked by InstallBlock.</string>
+    <string name="confirm_uninstall_ok">Uninstall and block</string>
+    <string name="confirm_cancel">Cancel</string>
+
+    <!-- Block progress steps -->
+    <string name="step_remove_app">Remove app</string>
+    <string name="step_install_placeholder">Install placeholder</string>
+    <string name="step_done">Done</string>
+
+    <!-- Errors -->
+    <string name="error_verification_block">Android blocked this install. Enable the advanced flow or switch to Shizuku mode.</string>
+    <string name="error_self_block">InstallBlock cannot block itself.</string>
+    <string name="error_system_app">System apps cannot be blocked.</string>
+    <string name="error_denylist">This app is on the safety denylist and cannot be blocked.</string>
+
+    <!-- Shizuku status -->
+    <string name="shizuku_not_installed">Shizuku is not installed</string>
+    <string name="shizuku_not_running">Shizuku is not running</string>
+    <string name="shizuku_permission_denied">Shizuku permission not granted</string>
+
+    <!-- Misc UI -->
+    <string name="tab_browse">Browse</string>
+    <string name="tab_blocked">Blocked</string>
+    <string name="tab_settings">Settings</string>
+    <string name="search_placeholder">Search apps or package names…</string>
+    <string name="empty_list">No apps in the list yet.</string>
+    <string name="offline_badge">Offline: showing cached list</string>
+    <string name="retry">Retry</string>
+    <string name="unblock">Unblock</string>
+    <string name="block">Block</string>
+</resources>
+

@@ -1,0 +1,13 @@
+name: "InstallBlock CodeQL Configuration"
+
+# Exclude false-positive or non-applicable queries for this Android architecture:
+# 1. java/android/insecure-local-authentication: Device admin / UI warning gates are used as friction barriers, not a cryptographic vault.
+# 2. java/deprecated-call: Platform compatibility branches call SDK-specific APIs conditionally.
+# 3. java/android/missing-certificate-pinning: Dynamic blocklist and icon endpoints rotate certificates; hardcoded pinning breaks remote list fetch.
+query-filters:
+  - exclude:
+      id: java/android/insecure-local-authentication
+  - exclude:
+      id: java/deprecated-call
+  - exclude:
+      id: java/android/missing-certificate-pinning
