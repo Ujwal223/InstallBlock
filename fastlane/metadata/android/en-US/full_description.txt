@@ -1,0 +1,25 @@
+<p><b>InstallBlock</b> keeps unwanted apps from installing onto your Android device.</p>
+
+<p><b>The Problem:</b> Phones often end up with apps you never asked for. System updates can push new carrier bloatware, app stores silently restore sponsored apps, and sideloaded APKs or other users can install things without your permission. Normal uninstalls do not last because the next update or store trigger installs them right back.</p>
+
+<p><b>The Solution:</b> InstallBlock locks those apps at the system level. Once you block a package, nothing can install or restore it (not system updates, not app stores, and not third-party APKs) until you explicitly choose to unblock it.</p>
+
+<p><b>Key Features:</b></p>
+<ul>
+  <li><b>Permanent install prevention:</b> Stops bloatware, unwanted apps, and malicious packages from returning through system updates, Play Store, or manual downloads.</li>
+  <li><b>Two operation modes:</b>
+    <ul>
+      <li><b>Shizuku Mode (Recommended):</b> 1-tap silent blocking using elevated permissions without confirmation prompts.</li>
+      <li><b>Normal Mode:</b> Works on any stock Android device using standard system prompts.</li>
+    </ul>
+  </li>
+  <li><b>Tamper-resistant:</b> Keeps your blocking rules active so they cannot be casually undone in system settings.</li>
+  <li><b>Curated and custom catalog:</b> Search thousands of popular apps and bloatware packages, or add any custom package name.</li>
+  <li><b>Completely private:</b> No accounts, no ads, no trackers, and zero telemetry. Everything runs on your phone.</li>
+</ul>
+
+<p><b>Permissions:</b></p>
+<ul>
+  <li><b>Package Management:</b> Needed to inspect installed packages, remove blocked apps, and enforce install rules.</li>
+  <li><b>Internet:</b> Used only to fetch public catalog updates and app icons. No device data or personal info is ever sent out.</li>
+</ul>

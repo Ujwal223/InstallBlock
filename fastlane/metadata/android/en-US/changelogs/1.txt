@@ -1,0 +1,1 @@
+Initial release of InstallBlock featuring permanent app install prevention against system updates and unauthorized actors, Normal and Shizuku modes, and zero telemetry.

@@ -30,7 +30,7 @@ upload-keystore.jks
 release_notes.md
 
 # F-Droid listing metadata (draft recipe for fdroiddata)
-metadata/
+/metadata/
 
 # Documentation, PRD & design assets
 inspo/

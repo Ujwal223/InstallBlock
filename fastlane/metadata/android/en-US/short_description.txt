@@ -1,0 +1,1 @@
+Stop unwanted apps from being installed by system updates or malicious actors.
